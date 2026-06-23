@@ -22,6 +22,10 @@ export const useTaskStore = defineStore('tasks', () => {
     })
   }
 
+  addTask('Sleep')
+  addTask('Eat')
+  addTask('Sleep even more')
+
   function toggleTask(id) {
     for (let i = 0; i < tasks.value.length; i++) {
       if (tasks.value[i].id == id) {
