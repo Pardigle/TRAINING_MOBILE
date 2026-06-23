@@ -37,7 +37,7 @@
         </ion-item>
         <ion-item v-if="tasks.length < 1">
           <ion-text>
-            No added tasks yet!
+            No added tasks yet! 
           </ion-text>
         </ion-item>
       </ion-list>
