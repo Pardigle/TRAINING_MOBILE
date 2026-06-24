@@ -18,7 +18,8 @@ export const useTaskStore = defineStore('tasks', () => {
     tasks.value.push({ 
       id: nextId.value++, 
       name: name,
-      done: false 
+      done: false,
+      photo: null,
     })
   }
 
@@ -29,7 +30,7 @@ export const useTaskStore = defineStore('tasks', () => {
   function toggleTask(id) {
     for (let i = 0; i < tasks.value.length; i++) {
       if (tasks.value[i].id == id) {
-        tasks.value.done = !tasks.value.done
+        tasks.value[i].done = !tasks.value.done
         return
       }
     }
@@ -44,5 +45,14 @@ export const useTaskStore = defineStore('tasks', () => {
     }
   }
 
-  return { tasks, totalCount, doneCount, pendingCount, addTask, toggleTask, removeTask }
+  function addPhotoToTask(id, path) {
+    for (let i = 0; i < tasks.value.length; i++) {
+      if (tasks.value[i].id == id) {
+        tasks.value[i].photo = path
+        return
+      }
+    }
+  }
+
+  return { tasks, totalCount, doneCount, pendingCount, addTask, toggleTask, removeTask, addPhotoToTask }
 })

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/Day7/TabsPage.vue'
+import TabsPage from '../views/Day8/TabsPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -17,19 +17,19 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tasks',
-        component: () => import('@/views/Day7/TasksPage.vue'),
+        component: () => import('@/views/Day8/TasksPage.vue'),
       },
       {
         path: 'completed',
-        component: () => import('@/views/Day7/CompletedPage.vue')
+        component: () => import('@/views/Day8/CompletedPage.vue')
       },
       {
         path: 'settings',
-        component: () => import('@/views/Day7/SettingsPage.vue')
+        component: () => import('@/views/Day8/SettingsPage.vue')
       },
       {
         path: 'tasks/:id',
-        component: () => import('@/views/Day7/TaskDetailPage.vue'),
+        component: () => import('@/views/Day8/TaskDetailPage.vue'),
       }
     ]
   },
