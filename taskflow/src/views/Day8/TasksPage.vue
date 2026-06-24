@@ -28,13 +28,11 @@
       </ion-fab>
 
       <ion-list class="task-list">
-        <ion-item v-for="task in tasks" button detail>
-          <IonCheckbox v-model="task.done" @change="toggleTask(task.id)"></IonCheckbox>
+        <ion-item class="task-item" v-for="task in tasks" button detail>
+          <ion-checkbox v-model="task.done" @change="toggleTask(task.id)"></ion-checkbox>
           <ion-img class="thumbnail" v-if="task.photo" :src="task.photo"></ion-img>
           <ion-label :class="{ 'done': task.done }" @click="handleTaskTab(task.id)"> {{ task.name }} </ion-label>
-          <ion-button color="danger" @click="removeTask(task.id)">
-            <ion-icon :icon="trashOutline"></ion-icon>
-          </ion-button>
+          <ion-icon :icon="trashOutline" @click="removeTask(task.id)"></ion-icon>
         </ion-item>
         <ion-item v-if="tasks.length < 1">
           <ion-text>
@@ -95,9 +93,6 @@ function handleTaskTab(id) {
 
 <style>
 
-.add-task {
-  display: flex;
-}
 .done { text-decoration: line-through; color: #9ca3af; }
 
 .thumbnail {

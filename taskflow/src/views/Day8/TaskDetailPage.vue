@@ -2,16 +2,13 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/tabs/tasks"></ion-back-button>
+        </ion-buttons>
         <ion-title>Task {{ $route.params.id }}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-back-button default-href="/tabs/tasks"></ion-back-button>
-        <ion-toolbar>
-          <ion-title size="large"> Task {{ $route.params.id }} </ion-title>
-        </ion-toolbar>
-      </ion-header>
       <div v-if="task">
         <div>
           <ion-text>ID: {{ task.id }}</ion-text>
@@ -48,6 +45,7 @@ import {
   IonBackButton, 
   IonIcon,
   IonImg,
+  IonButtons
 } from '@ionic/vue';
 import { cameraOutline } from 'ionicons/icons';
 import ExploreContainer from '@/components/ExploreContainer.vue';

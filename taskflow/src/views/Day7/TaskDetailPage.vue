@@ -1,17 +1,14 @@
 <template>
   <ion-page>
     <ion-header>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="/tabs/tasks"></ion-back-button>
+      </ion-buttons>
       <ion-toolbar>
         <ion-title>Task {{ $route.params.id }}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-back-button default-href="/tabs/tasks"></ion-back-button>
-        <ion-toolbar>
-          <ion-title size="large"> Task {{ $route.params.id }} </ion-title>
-        </ion-toolbar>
-      </ion-header>
       <div v-if="task">
         <div>
           <ion-text>ID: {{ task.id }}</ion-text>
@@ -30,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonText, IonBackButton } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonText, IonBackButton, IonButtons } from '@ionic/vue';
 import ExploreContainer from '@/components/ExploreContainer.vue';
 import { useTaskStore } from '@/stores/taskStore.js';
 import { computed } from 'vue';
