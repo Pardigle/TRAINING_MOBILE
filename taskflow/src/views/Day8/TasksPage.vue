@@ -29,7 +29,7 @@
 
       <ion-list class="task-list">
         <ion-item class="task-item" v-for="task in tasks" button detail>
-          <ion-checkbox v-model="task.done" @change="toggleTask(task.id)"></ion-checkbox>
+          <ion-checkbox :checked="task.done" @ion-change="toggleTask(task.id)"></ion-checkbox>
           <ion-img class="thumbnail" v-if="task.photo" :src="task.photo"></ion-img>
           <ion-label :class="{ 'done': task.done }" @click="handleTaskTab(task.id)"> {{ task.name }} </ion-label>
           <ion-icon :icon="trashOutline" @click="removeTask(task.id)"></ion-icon>
@@ -79,7 +79,7 @@ const taskStore = useTaskStore();
 const router = useRouter()
 
 const { tasks, doneCount, pendingCount, totalCount } = storeToRefs(taskStore);
-const { addTask, toggleTask, removeTask } = taskStore
+const { addTask, toggleTask, removeTask, saveTasks, loadTasks } = taskStore
 
 function handleAdd() {
   addTask(newTaskName.value)

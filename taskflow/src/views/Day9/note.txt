@@ -1,0 +1,3 @@
+Check:
+- App.vue
+- @/stores/taskStore.js
